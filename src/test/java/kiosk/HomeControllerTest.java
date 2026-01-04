@@ -15,7 +15,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;;
 
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest
+@WebMvcTest(HomeController.class)
 public class HomeControllerTest {
 
     @Autowired
