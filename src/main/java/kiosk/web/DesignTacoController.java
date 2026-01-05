@@ -3,8 +3,7 @@ package kiosk.web;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
-//import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,6 +46,19 @@ public class DesignTacoController {
         model.addAttribute("design", new Taco());
 
         return "design";
+    }
+
+    @PostMapping
+    public String processDesign(@Valid Taco design, Errors errors) {
+
+        log.info("Message is here: " + errors.hasErrors());
+
+        if (errors.hasErrors()) return "design";
+
+        log.info("Processing design:" + design);
+
+        return "redirect:/orders/current";
+
     }
 
     private List<Ingredient> filterByType(List<Ingredient> ingredients, Type type) {
