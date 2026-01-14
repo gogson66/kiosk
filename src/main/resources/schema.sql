@@ -6,7 +6,7 @@ type varchar(10) not null
 
 
 create table if not exists Taco (
-id identity,
+id bigint identity primary key,
 name varchar(50) not null,
 createdAt timestamp not null
 );

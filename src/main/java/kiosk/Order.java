@@ -3,10 +3,14 @@ package kiosk;
 import lombok.Data;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.Pattern;
+
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Data
 public class Order {
@@ -38,5 +42,12 @@ public class Order {
 
     @Digits(integer=3, fraction = 0, message = "Invalid CVV")
     private String ccCVV;
+
+    @NotNull(message = "You must have at least one taco")
+    private List<Taco> tacos = new ArrayList<>();
+
+    public void addDesign(Taco taco) {
+        tacos.add(taco);
+    }
 
 }
