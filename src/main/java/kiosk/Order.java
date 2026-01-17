@@ -5,8 +5,8 @@ import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.Pattern;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import java.time.Instant;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
 import jakarta.validation.constraints.NotBlank;
@@ -17,7 +17,7 @@ public class Order {
 
     private long id;
 
-    private Date placedAt;
+    private Instant placedAt;
 
     @NotBlank(message="Name is required")
     private String name;
