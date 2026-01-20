@@ -67,6 +67,7 @@ public class DesignTacoController {
         Taco saved = tacoRepository.save(taco);
         System.out.println("TACO: " + saved);
         order.addDesign(saved);
+        log.info("after adding design" + order.getTacos());
         
 
         return "redirect:/orders/current";

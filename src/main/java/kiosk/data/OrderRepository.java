@@ -2,7 +2,7 @@ package kiosk.data;
 
 import kiosk.Order;
 
-public interface OrederRepository {
+public interface OrderRepository {
     
     Order save(Order order);
 }
