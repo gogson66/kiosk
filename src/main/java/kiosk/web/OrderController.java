@@ -2,6 +2,8 @@ package kiosk.web;
 
 import jakarta.validation.Valid;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,8 +35,6 @@ public class OrderController {
     @GetMapping("/current") 
     public String orderForm(Model model) {
 
-        //model.addAttribute("order", new Order());
-
         return "orderForm";
    
     } 
@@ -47,6 +47,8 @@ public class OrderController {
         log.info("Processing order: " + order);
 
         orderRepo.save(order);
+        List<Order> orders = orderRepo.findByCity("Brčko");
+        log.info("Orders by city: "  + orders);
         sessionStatus.setComplete();
 
         return "redirect:/";

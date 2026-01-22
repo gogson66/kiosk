@@ -84,8 +84,16 @@ public class DesignTacoController {
     @ModelAttribute
     public void addIngredients(Model model) {
 
-        List<Ingredient> ingredients = new ArrayList<>();
-        ingredientRepo.findAll().forEach(ingredient -> ingredients.add(ingredient));
+        /*List<Ingredient> ingredients = new ArrayList<>();
+        ingredientRepo.findById("COTO");
+        ingredientRepo.findAll().forEach(ingredient -> {
+            log.info("ingredient: " + ingredient);
+            ingredients.add(ingredient); 
+        } );*/
+
+        List<Ingredient> ingredients = ingredientRepo.findAll();
+        Ingredient ingredient = ingredientRepo.findById("COTO").orElse(null);
+        System.out.println(ingredient);
 
 
     for (Type type : Ingredient.Type.values()) {

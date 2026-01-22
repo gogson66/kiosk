@@ -1,4 +1,4 @@
-package kiosk.data;
+/*package kiosk.data;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -45,5 +45,5 @@ public class JdbcIngredientRepository implements IngredientRepository{
     }
 
     
-}
+}*/
  
