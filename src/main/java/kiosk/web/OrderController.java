@@ -47,10 +47,8 @@ public class OrderController {
         log.info("Processing order: " + order);
 
         orderRepo.save(order);
-        List<Order> orders = orderRepo.findByCity("Brčko");
-        log.info("Orders by city: "  + orders);
         sessionStatus.setComplete();
-
+ 
         return "redirect:/";
 
     }
