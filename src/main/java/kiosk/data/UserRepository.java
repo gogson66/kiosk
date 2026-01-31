@@ -5,6 +5,6 @@ import kiosk.User;
 
 public interface UserRepository extends CrudRepository<User, Long> {
 
-    User findbyUsername(String username);
+    User findByUsername(String username);
 
 }
