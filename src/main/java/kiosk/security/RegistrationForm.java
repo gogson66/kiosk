@@ -10,6 +10,7 @@ public class RegistrationForm {
 
     private String username;
     private String password;
+    private String confirmPassword;
     private String fullname;
     private String street;
     private String city;
